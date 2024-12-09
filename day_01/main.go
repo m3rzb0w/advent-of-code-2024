@@ -55,13 +55,11 @@ func main() {
 	var count int
 
 	for i := range left {
-		var r int
 		if left[i] < right[i] {
-			r = right[i] - left[i]
+			count += right[i] - left[i]
 		} else {
-			r = left[i] - right[i]
+			count += left[i] - right[i]
 		}
-		count += r
 	}
 
 	fmt.Println("part1", count)
