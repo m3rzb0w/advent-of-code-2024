@@ -66,6 +66,7 @@ func main() {
 
 	fmt.Println("part1", count)
 
+	//part2
 	counters := make(map[int]int)
 
 	for i := range left {
@@ -76,7 +77,6 @@ func main() {
 		}
 	}
 
-	//part2
 	var count2 int
 
 	for k, v := range counters {
