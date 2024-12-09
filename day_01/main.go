@@ -14,7 +14,7 @@ var fileExists = fetch.CheckFileExists(fileName)
 var session = fetch.Grabsession()
 var input = fetch.Getfile(fileExists, fileName, url, session)
 
-var sample = `
+var sample string = `
 3   4
 4   3
 2   5

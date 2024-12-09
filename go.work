@@ -3,3 +3,4 @@ go 1.23.4
 use ./getdada
 
 use ./day_01
+use ./day_02
