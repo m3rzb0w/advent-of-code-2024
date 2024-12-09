@@ -34,6 +34,7 @@ func main() {
 	data := strings.Split(input, "\n")
 	fmt.Println(sample)
 
+	//part1
 	var poslist = []Position{{1, 0}, {0, -1}, {-1, 0}, {0, 1}, {-1, -1}, {-1, 1}, {1, 1}, {1, -1}}
 	var count int
 
@@ -58,4 +59,25 @@ func main() {
 	}
 	fmt.Printf("part1 : %d\n", count)
 
+	//part2
+	poslist = []Position{{-1, -1}, {-1, 1}, {1, 1}, {1, -1}}
+	var count2 int
+	for i := 1; i < len(data)-1; i++ {
+		for j := 1; j < len(data[0])-1; j++ {
+			if string(data[i][j]) != "A" {
+				continue
+			}
+			var tmp string
+			for _, v := range poslist {
+				tmp += string(data[i+v.y][j+v.x])
+			}
+			switch tmp {
+			case "MMSS", "MSSM", "SSMM", "SMMS":
+				count2++
+			default:
+				fmt.Println("no xmas for you")
+			}
+		}
+	}
+	fmt.Printf("part2 : %d\n", count2)
 }
