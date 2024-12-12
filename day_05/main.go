@@ -113,7 +113,7 @@ func main() {
 
 func sortUpdates(nums []int) []int {
 	for {
-		var isSorted = true
+		var isSorted bool = true
 		for i := range len(nums) - 1 {
 			for j := range orderingRules {
 				if nums[i] == orderingRules[j].pageRight && orderingRules[j].pageLeft == nums[i+1] {
