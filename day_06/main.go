@@ -41,7 +41,7 @@ var directions = map[string]Position{
 func (p *Position) getStartPos(data []string) (Position, error) {
 	for i := range data {
 		for j := range data[i] {
-			if string(data[i][j]) == "^" {
+			if data[i][j] == '^' {
 				return Position{
 					x:   i,
 					y:   j,
@@ -110,14 +110,14 @@ func main() {
 
 	for i := range maze {
 		for j := range maze[i] {
-			if string(maze[i][j]) != "." {
+			if maze[i][j] != '.' {
 				continue
 			}
-			maze[i][j] = []rune("#")[0]
+			maze[i][j] = '#'
 			if isLooping(maze, start) {
 				count++
 			}
-			maze[i][j] = []rune(".")[0]
+			maze[i][j] = '.'
 		}
 	}
 
